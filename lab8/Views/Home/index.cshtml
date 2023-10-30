@@ -1,0 +1,30 @@
+﻿@model List<lab8.Models.Product>
+
+<h2>Список продуктів</h2>
+
+<h3>У виді списку:</h3>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.Id. @product.Name - @product.Price$ (@product.CreateDate)</li>
+    }
+</ul>
+
+<h3>У виді таблиці:</h3>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Created Date</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Price$</td>
+            <td>@product.CreateDate</td>
+        </tr>
+    }
+</table>
